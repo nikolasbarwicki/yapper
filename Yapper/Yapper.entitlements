@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+    ENTITLEMENTS EXPLAINED (for TypeScript devs):
+
+    Think of entitlements as a "capabilities manifest" - similar to:
+    - Chrome extension's manifest.json permissions
+    - Android's AndroidManifest.xml permissions
+    - iOS Info.plist usage descriptions
+
+    These declare what system resources your app needs access to.
+    macOS will verify these at runtime and prompt users when needed.
+    -->
+
+    <!--
+    App Sandbox DISABLED
+
+    We need this OFF because:
+    1. Accessibility API (to type into other apps) requires non-sandboxed access
+    2. Global keyboard shortcuts need broader system access
+
+    For App Store distribution, you'd need to request an exception.
+    For direct distribution (like Homebrew), this is fine.
+    -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+
+    <!--
+    Microphone access
+    Allows recording audio from the system microphone
+    -->
+    <key>com.apple.security.device.audio-input</key>
+    <true/>
+
+    <!--
+    Apple Events / Automation
+    Allows sending keyboard events to other applications
+    (This is how we "type" text into focused inputs)
+    -->
+    <key>com.apple.security.automation.apple-events</key>
+    <true/>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security reports
+    url: https://github.com/nikolasbarwicki/yapper-app/security/policy
+    about: Please report vulnerabilities privately through the security policy.
+  - name: Support policy
+    url: https://github.com/nikolasbarwicki/yapper-app/blob/main/SUPPORT.md
+    about: Read what support is available for this best-effort open-source project.
